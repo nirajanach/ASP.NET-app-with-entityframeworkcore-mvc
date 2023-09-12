@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Packt.Shared;
+using Microsoft.AspNetCore.Mvc.RazorPages; //PageModel
+using Packt.Shared; //Employee, NorthwindContext
 
 namespace PacktFeatures.Pages;
 
