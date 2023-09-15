@@ -1,0 +1,9 @@
+﻿@model Packt.Shared.Customer
+
+<div class="card border-dark mb-3" style="max-width:18rem;">
+    <div class="card-header">@Model?.ContactName, @Model?.ContactTitle</div>
+    <div class="card-body text-dark">
+        <h5 class="card-title">Company Name: @Model?.CompanyName</h5>       
+        <p class="card-text">@Model?.Orders</p>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@model Packt.Shared.Order
+
+
+<div class="row">
+    <h1 class="display-2">Orders</h1>
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Order ID</th>
+                <th>Product ID</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Discount</th>
+                <th>Order</th>
+                <th>Product</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.OrderDetails is not null)
+            {
+                @foreach (IEnumerable<Areas_PacktFeatures_Pages_OrderDetails> o in Model.OrderDetails)
+                {
+                    <tr>
+                        <td> @o</td>
+                        
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

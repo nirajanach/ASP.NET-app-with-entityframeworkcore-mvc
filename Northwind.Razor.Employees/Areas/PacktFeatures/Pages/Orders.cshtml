@@ -1,0 +1,16 @@
+﻿@page
+@using Packt.Shared
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model PacktFeatures.Pages.OrdersPageModel
+
+<div class="row">
+    <h1 class="display-2">Order Details</h1>
+</div>
+<div class="row">
+    @foreach (Order order in Model.Orders)
+    {
+        <div class="col-sm-3">
+            <partial name="_Order" model="order" />
+        </div>
+    }
+</div>

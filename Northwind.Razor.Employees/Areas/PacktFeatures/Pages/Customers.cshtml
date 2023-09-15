@@ -1,0 +1,70 @@
+﻿@page "{id}"
+@model PacktFeatures.Pages.CustomerModel
+@{
+    ViewData["Title"] = "Customer Details";
+}
+
+<h2>@Model.Customer.ContactName</h2>
+
+<p>@Model.Customer.Address</p>
+<p>@Model.Customer.City</p>
+<p>@Model.Customer.Country</p>
+
+
+
+
+
+<h4>Orders </h4>
+
+
+
+
+@foreach (var order in Model.Orders)
+{
+
+
+    <th scope="row">Order Id: @order.OrderId</th>
+
+
+
+    <table class="table ">
+        <thead>
+            <tr>
+                <th scope="col">Product ID</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Unit Price</th>
+            </tr>
+        </thead>
+        <tbody>        
+
+
+                    @foreach (var detail in order.OrderDetails)
+                    {
+                        <tr>       
+                        <td>@detail.Product.ProductId</td>
+                        <td>@detail.Product.ProductName</td>
+                        <td>@detail.Quantity</td>
+                        <td>@detail.UnitPrice</td>
+                        </tr>
+                    }
+    </tbody>
+</table>
+
+}
+
+
+
+
+@*<h6 class="display-4"> Order ID: @order.OrderId</h6>
+
+    <ul class="list-group">
+        @foreach (var detail in order.OrderDetails)
+        {
+            <li class="list-group-item">
+                Product: @detail.Product.ProductName,
+                Quantity: @detail.Quantity,
+                Unit Price: @detail.UnitPrice
+            </li>
+        }
+    </ul>*@
